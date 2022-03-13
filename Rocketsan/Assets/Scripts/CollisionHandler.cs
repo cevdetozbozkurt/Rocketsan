@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    
+    [SerializeField] float levelLoadDelay = 2f;
     void OnCollisionEnter(Collision other) 
     {
         switch(other.gameObject.tag)
@@ -11,12 +12,8 @@ public class CollisionHandler : MonoBehaviour
             case "Friendly":
                 Debug.Log("Friendly");
                 break;
-            case "Fuel":
-                Debug.Log("You picked up fuel");
-                break;
             case "Finish":
-                Debug.Log("Congrats you've finished");
-                NextLevel();
+                StartSuccessSequence();
                 break;
             default:
                 StartCrashSequence();
@@ -24,10 +21,16 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
+    void StartSuccessSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("NextLevel", levelLoadDelay);
+    }
+
     void StartCrashSequence()
     {
         GetComponent<Movement>().enabled = false;
-        Invoke("ReloadLevel", 1f);
+        Invoke("ReloadLevel", levelLoadDelay);
     }
 
     void ReloadLevel()
