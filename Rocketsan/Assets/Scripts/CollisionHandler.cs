@@ -19,9 +19,15 @@ public class CollisionHandler : MonoBehaviour
                 NextLevel();
                 break;
             default:
-                Invoke("ReloadLevel", 1f);
+                StartCrashSequence();
                 break;
         }
+    }
+
+    void StartCrashSequence()
+    {
+        GetComponent<Movement>().enabled = false;
+        Invoke("ReloadLevel", 1f);
     }
 
     void ReloadLevel()
