@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Friendly
+  - Left boost
+  - Right boost
   layers:
   - Default
   - TransparentFX
