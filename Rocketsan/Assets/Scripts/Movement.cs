@@ -35,47 +35,72 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if(!rocket_audio.isPlaying)
-            {
-                rocket_audio.PlayOneShot(mainEngine);
-                
-            }
-            if (!boost.isPlaying)
-            {
-                boost.Play();
-            }
+            StartThrusting();
         }
         else
         {
-            rocket_audio.Stop();
-            boost.Stop();
+            StopThrusting();
         }
+    }
+
+    void StartThrusting()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!rocket_audio.isPlaying)
+        {
+            rocket_audio.PlayOneShot(mainEngine);
+
+        }
+        if (!boost.isPlaying)
+        {
+            boost.Play();
+        }
+    }
+
+    void StopThrusting()
+    {
+        rocket_audio.Stop();
+        boost.Stop();
     }
 
     void ProcessRotation()
     {
         if(Input.GetKey(KeyCode.A))
         {
-            ApplyRotation(rotationThrust);
-            if(!leftBoost.isPlaying)
-            {
-                leftBoost.Play();
-            }
+            ProcessRotationLeft();
         }
         else if(Input.GetKey(KeyCode.D))
         {
-            ApplyRotation(-rotationThrust); 
-            if (!rightBoost.isPlaying)
-            {
-                rightBoost.Play();
-            }
+            ProcessRotationRight();
         }
         else
         {
-            rightBoost.Stop();
-            leftBoost.Stop();
+            StopProcessRotation();
         }
+    }
+
+    void ProcessRotationRight()
+    {
+        ApplyRotation(-rotationThrust);
+        if (!rightBoost.isPlaying)
+        {
+            rightBoost.Play();
+        }
+    }
+
+    void ProcessRotationLeft()
+    {
+        ApplyRotation(rotationThrust);
+        if (!leftBoost.isPlaying)
+        {
+            leftBoost.Play();
+        }
+    }
+
+    void StopProcessRotation()
+    {
+        rightBoost.Stop();
+        leftBoost.Stop();
     }
 
     void ApplyRotation(float rotationThisFrame)
