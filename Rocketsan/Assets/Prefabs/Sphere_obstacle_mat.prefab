@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 288694455192376990}
   - component: {fileID: 9193391827542420062}
   - component: {fileID: 1773634609092291564}
-  - component: {fileID: 8097681519468842488}
+  - component: {fileID: 748682703}
   m_Layer: 0
   m_Name: Sphere_obstacle_mat
   m_TagString: Untagged
@@ -26,9 +26,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3242623244861867666}
-  m_LocalRotation: {x: -0.35695508, y: 0.64277875, z: -0.019920232, w: 0.6775115}
+  m_LocalRotation: {x: -0.35695615, y: 0.6427798, z: -0.019918965, w: 0.67750996}
   m_LocalPosition: {x: 12.49, y: 4.919412, z: 6.5}
-  m_LocalScale: {x: 4.2591, y: 0.68511, z: 4.2113}
+  m_LocalScale: {x: 3.4830492, y: 15.508149, z: 4.2113}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8097681519468842488
-SphereCollider:
+--- !u!136 &748682703
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,6 +92,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.50000036
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0000000018626451, z: 0}
