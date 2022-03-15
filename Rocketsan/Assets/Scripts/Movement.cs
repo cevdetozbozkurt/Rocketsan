@@ -67,19 +67,19 @@ public class Movement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A))
         {
-            ProcessRotationLeft();
+            RotateLeft();
         }
         else if(Input.GetKey(KeyCode.D))
         {
-            ProcessRotationRight();
+            RotateRight();
         }
         else
         {
-            StopProcessRotation();
+            StopRotating();
         }
     }
 
-    void ProcessRotationRight()
+    void RotateRight()
     {
         ApplyRotation(-rotationThrust);
         if (!rightBoost.isPlaying)
@@ -88,7 +88,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void ProcessRotationLeft()
+    void RotateLeft()
     {
         ApplyRotation(rotationThrust);
         if (!leftBoost.isPlaying)
@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    void StopProcessRotation()
+    void StopRotating()
     {
         rightBoost.Stop();
         leftBoost.Stop();
