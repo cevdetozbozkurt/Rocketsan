@@ -20,9 +20,38 @@ public class PortalControl : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        /*
         if(other.gameObject.tag == "Portal Enter")
         {
-            rocket.transform.position = PortalExitTransform;
+            Invoke("Enterteleport", 2f);
         }
+        else if (other.gameObject.tag == "Portal Exit")
+        {
+            Invoke("Exitteleport", 2f);
+        }
+        */
+        
+        switch(other.gameObject.tag)
+        {
+            case "Enter Portal":
+                Exitteleport();
+                break;
+            case "Exit Portal":
+                Enterteleport();
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    void Enterteleport()
+    {
+        rocket.transform.position = PortalExitTransform;
+    }
+
+    void Exitteleport()
+    {
+        rocket.transform.position = PortalEnterTransform;
     }
 }
