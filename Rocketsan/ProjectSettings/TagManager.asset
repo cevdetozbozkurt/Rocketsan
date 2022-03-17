@@ -9,6 +9,7 @@ TagManager:
   - Right boost
   - Portal Enter
   - Portal Exit
+  - Rocket
   layers:
   - Default
   - TransparentFX
