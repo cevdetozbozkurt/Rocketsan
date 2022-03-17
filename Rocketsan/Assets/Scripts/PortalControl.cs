@@ -5,8 +5,8 @@ using UnityEngine;
 public class PortalControl : MonoBehaviour
 {
 
-    ParticleSystem PortalEnter;
-    ParticleSystem PortalExit;
+    [SerializeField] GameObject PortalEnter;
+    [SerializeField] GameObject PortalExit;
     [SerializeField] GameObject rocket;
     
     Vector3 PortalEnterTransform;
@@ -15,34 +15,22 @@ public class PortalControl : MonoBehaviour
 
     void Start()
     {
-        PortalEnter = GameObject.FindGameObjectWithTag("Portal Enter").GetComponent<ParticleSystem>();
-        PortalExit = GameObject.FindGameObjectWithTag("Portal Exit").GetComponent<ParticleSystem>();
         PortalEnterTransform = PortalEnter.transform.position;
         PortalExitTransform = PortalExit.transform.position;
-        Debug.Log("Rocket Transform = " + RocketTransform);
-        Debug.Log("Portal Enter Transform ="+PortalEnterTransform);
-        Debug.Log("Portal Exit Transform = "+PortalExitTransform);
     }
 
     void Update() 
     {
-        
         RocketTransform = rocket.transform.position;
-        Debug.Log("New Rocket Transform"+RocketTransform);
+
     }
 
     void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Portal Enter"){
-            RocketTransform = PortalExitTransform;
-            Debug.Log("After tp rocket transform = "+RocketTransform);
-        }
-    }
-    void EnterPortal()
-    {
-        if(RocketTransform == PortalEnterTransform)
+        if(other.gameObject.tag == "Portal Enter")
         {
-            RocketTransform = PortalExitTransform;
+            rocket.transform.position = PortalExitTransform;
+            Debug.Log("roket transform = " + RocketTransform);
+            Debug.Log("Portal exit transform" + PortalExitTransform);
         }
     }
-
 }

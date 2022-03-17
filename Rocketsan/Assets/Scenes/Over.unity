@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.23967922, g: 0.14395759, b: 0.17609695, a: 1}
+  m_IndirectSpecularColor: {r: 0.0000005318069, g: 0.003189576, b: 0.0005974551, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 36046936}
   m_Layer: 0
   m_Name: Portal Exit
-  m_TagString: Portal Exit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4981,15 +4981,11 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 17, y: 4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1264561056}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!1 &138479372 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1540426862014970058, guid: 96365495d22cd5645968ac027d4127be, type: 3}
-  m_PrefabInstance: {fileID: 421353911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &165462487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5058,14 +5054,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 1540426862014970058, guid: 96365495d22cd5645968ac027d4127be, type: 3}
-      propertyPath: m_TagString
-      value: Rocket
-      objectReference: {fileID: 0}
     - target: {fileID: 5534858994311307827, guid: 96365495d22cd5645968ac027d4127be, type: 3}
-      propertyPath: rocket
+      propertyPath: PortalExit
       value: 
-      objectReference: {fileID: 138479372}
+      objectReference: {fileID: 36046935}
+    - target: {fileID: 5534858994311307827, guid: 96365495d22cd5645968ac027d4127be, type: 3}
+      propertyPath: PortalEnter
+      value: 
+      objectReference: {fileID: 963015893}
     - target: {fileID: 7880625068131871018, guid: 96365495d22cd5645968ac027d4127be, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -5255,7 +5251,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5297,7 +5293,7 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0.1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
@@ -5312,13 +5308,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.69896275, y: -0.028644165, z: -0.25722972, w: -0.66668105}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -71.21, y: -86.215, z: -250.138}
 --- !u!1001 &843407550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5454,7 +5450,7 @@ GameObject:
   - component: {fileID: 963015894}
   m_Layer: 0
   m_Name: Portal Enter
-  m_TagString: Portal Enter
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10299,7 +10295,8 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -14, y: 2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 1460496391}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -10443,6 +10440,94 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6676776a7254f34f87040dca49e5138, type: 3}
+--- !u!1 &1264561055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264561056}
+  - component: {fileID: 1264561057}
+  m_Layer: 0
+  m_Name: Portal Exit rigid
+  m_TagString: Portal Exit
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1264561056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264561055}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.12696, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 36046938}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1264561057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264561055}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1460496390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460496391}
+  - component: {fileID: 1460496392}
+  m_Layer: 0
+  m_Name: Portal Enter rigid
+  m_TagString: Portal Enter
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1460496391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460496390}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.12696, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 963015896}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1460496392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460496390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1752044734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10468,31 +10553,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6136782
+      value: 0.6201442
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3028454
+      value: 0.30361107
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7090354
+      value: 0.70337766
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.17015445
+      value: 0.1688235
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 7.493
+      value: 7.994
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 100.983
+      value: 100.11
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100642, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 40.075
+      value: 39.997
       objectReference: {fileID: 0}
     - target: {fileID: 3986254852895100646, guid: 0d29269235c6a8442b38f881a377fbb7, type: 3}
       propertyPath: m_Name
