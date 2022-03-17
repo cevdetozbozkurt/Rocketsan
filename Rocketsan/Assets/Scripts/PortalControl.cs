@@ -19,18 +19,10 @@ public class PortalControl : MonoBehaviour
         PortalExitTransform = PortalExit.transform.position;
     }
 
-    void Update() 
-    {
-        RocketTransform = rocket.transform.position;
-
-    }
-
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Portal Enter")
         {
             rocket.transform.position = PortalExitTransform;
-            Debug.Log("roket transform = " + RocketTransform);
-            Debug.Log("Portal exit transform" + PortalExitTransform);
         }
     }
 }
