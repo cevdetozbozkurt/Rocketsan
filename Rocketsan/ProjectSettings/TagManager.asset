@@ -10,6 +10,7 @@ TagManager:
   - Portal Enter
   - Portal Exit
   - Rocket
+  - PortalExitTrigger
   layers:
   - Default
   - TransparentFX

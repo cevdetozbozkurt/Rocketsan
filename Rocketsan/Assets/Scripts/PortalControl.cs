@@ -20,30 +20,31 @@ public class PortalControl : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
-        /*
+        
         if(other.gameObject.tag == "Portal Enter")
         {
-            Invoke("Enterteleport", 2f);
+            Enterteleport();
         }
         else if (other.gameObject.tag == "Portal Exit")
         {
-            Invoke("Exitteleport", 2f);
-        }
-        */
-        
-        switch(other.gameObject.tag)
-        {
-            case "Enter Portal":
-                Exitteleport();
-                break;
-            case "Exit Portal":
-                Enterteleport();
-                break;
-            default:
-                break;
+            Exitteleport();
         }
 
+        
+        // switch(other.gameObject.tag)
+        // {
+        //     case "Enter Portal":
+        //         Exitteleport();
+        //         break;
+        //     case "Exit Portal":
+        //         Enterteleport();
+        //         break;
+        //     default:
+        //         break;
+        // }
+
     }
+
 
     void Enterteleport()
     {
